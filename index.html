@@ -3,62 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Пиксельный Квест</title>
+    <title>RPG Огонёк: Начало</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* Стиль для canvas, чтобы он был виден */
-        canvas {
-            border: 2px solid #333; /* рамка вокруг игрового поля */
-            display: block; /* центрирование */
-            margin: 20px auto; /* отступы */
-            image-rendering: pixelated; /* для четкости пиксельной графики */
-            image-rendering: -moz-crisp-edges;
-            image-rendering: crisp-edges;
-        }
-        body {
-            background-color: #222; /* темный фон */
-            color: #eee; /* светлый текст */
-            font-family: 'Press Start 2P', cursive; /* пиксельный шрифт, если подключен */
-            text-align: center;
-            padding-top: 20px;
-        }
-        .controls {
-            margin-top: 20px;
-            font-size: 1.2em;
-        }
-        .controls span {
-            padding: 10px 15px;
-            border: 2px solid #555;
-            border-radius: 5px;
-            margin: 0 10px;
-            cursor: pointer;
-            background-color: #444;
-            user-select: none; /* чтобы нельзя было выделить текст */
-        }
-        .controls span:active {
-            background-color: #666;
-        }
-        #message {
-            margin-top: 20px;
-            font-size: 1.1em;
-            color: yellow;
-        }
-    </style>
 </head>
 <body>
-    <h1>Пиксельный Квест</h1>
-    <canvas id="gameCanvas"></canvas>
-    <div class="controls">
-        <span id="move-up">⬆️</span>
-        <span id="move-left">⬅️</span>
-        <span id="move-right">➡️</span>
-        <span id="move-down">⬇️</span>
-    </div>
-    <div id="message"></div>
+    <div id="game-container">
+        <canvas id="gameCanvas"></canvas>
+        
+        <!-- Окно диалога -->
+        <div id="dialogue-box" class="hidden">
+            <div id="speaker-name">Имя</div>
+            <div id="dialogue-text">Текст диалога...</div>
+            <div id="dialogue-hint">Нажми [E] или кнопку ниже, чтобы продолжить</div>
+        </div>
 
+        <!-- Управление -->
+        <div class="controls">
+            <div class="move-btns">
+                <button id="up">▲</button>
+                <div>
+                    <button id="left">◀️</button>
+                    <button id="down">▼</button>
+                    <button id="right">▶️</button>
+                </div>
+            </div>
+            <button id="action-btn">ДЕЙСТВИЕ (E)</button>
+        </div>
+    </div>
     <script src="game.js"></script>
-    <!-- Можно подключить пиксельный шрифт, если хочешь:
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    -->
 </body>
 </html>
