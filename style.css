@@ -1,0 +1,81 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #222;
+    color: #eee;
+    font-family: 'Arial', sans-serif; /* fallback font */
+}
+
+/* Если подключили шрифт из Google Fonts: */
+/*
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+body {
+    font-family: 'Press Start 2P', cursive;
+}
+*/
+
+canvas {
+    border: 3px solid #555;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+    margin-bottom: 20px; /* Отступ от канваса до кнопок */
+}
+
+h1 {
+    color: #f0a000; /* Яркий заголовок */
+    margin-bottom: 20px;
+}
+
+.controls {
+    display: flex;
+    gap: 15px; /* Расстояние между кнопками */
+    margin-top: 20px;
+}
+
+.controls span {
+    background-color: #444;
+    border: 3px solid #666;
+    border-radius: 8px;
+    padding: 15px 20px;
+    font-size: 1.5em; /* Большие стрелки */
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    user-select: none; /* Предотвращает выделение текста */
+}
+
+.controls span:hover {
+    background-color: #555;
+}
+
+.controls span:active {
+    background-color: #777;
+}
+
+#message {
+    margin-top: 25px;
+    font-size: 1.1em;
+    color: #ffdd57; /* Желтоватый для сообщений */
+    min-height: 25px; /* Чтобы контейнер не пропадал, если сообщения нет */
+}
+
+/* Кнопка победы */
+.win-button {
+    background-color: #28a745; /* Зеленый */
+    border-color: #218838;
+    color: white;
+    font-size: 1.3em;
+    padding: 15px 25px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.win-button:hover {
+    background-color: #218838;
+}
